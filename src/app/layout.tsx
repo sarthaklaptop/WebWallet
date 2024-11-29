@@ -1,6 +1,31 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Pacifico, Joti_One, Audiowide, Lobster } from "next/font/google"
 import "./globals.css";
+
+const pacifico_init = Pacifico({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font--pacifico'
+})
+
+const lobster_init = Lobster({
+  subsets: ['latin'],
+  weight: ["400"],
+  variable: '--font--lobster'
+})
+
+const joti_one = Joti_One({
+  subsets: ['latin'],
+  weight: ["400"],
+  variable: '--font--joti-one'
+})
+
+const audiowide_init = Audiowide({
+  subsets: ['latin'],
+  weight: ["400"],
+  variable: "--font--audiowide"
+})
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${lobster_init.variable} ${geistMono.variable} ${pacifico_init.variable} ${joti_one.variable} ${audiowide_init.variable} antialiased w-3/4 flex mx-auto`}
       >
         {children}
       </body>

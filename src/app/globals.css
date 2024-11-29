@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.pacifico {
+  font-family: var(--font--pacifico);
+}
+
+.joti_one {
+  font-family: var(--font--joti-one);
+}
+
+.audiowide {
+  font-family: var(--font--audiowide);
+}
+
+.lobster {
+  font-family: var(--font--lobster);
+}
 /* @layer base {
   :root {
     --background: 0 0% 100%;

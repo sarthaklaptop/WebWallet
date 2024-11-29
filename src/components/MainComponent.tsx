@@ -5,6 +5,7 @@ import { AnotherComponent } from "@/components/AnotherComponent";
 import { useState } from "react";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import RippleButton from "@/components/ui/ripple-button";
+import { Button } from "./ui/button";
 
 // const handleAction = (component: string) => {
 //     setShowComponent(component);
@@ -22,11 +23,12 @@ export function MainComponent() {
       };
 
     return (
-        <div className="flex w-full items-center justify-center gap-4">
+        <div className="w-full">
+            {/* flex w-full  items-center justify-center gap-4 */}
 
             {showButtons && ( 
 
-                <div className="flex flex-col items-center justify-center gap-8">
+                <div className="flex mx-auto flex-col items-center justify-center gap-8">
                     <div>
                         <div className="text-4xl font-bold">
                             Wallet supports multiple blockchains
@@ -36,14 +38,24 @@ export function MainComponent() {
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-center">
+                    <div className="flex gap-2">
                         {/* Button to trigger components */}
-                        <RainbowButton onClick={() => handleAction("SecretRecoveryPhrase")} >
-                            Solana
-                        </RainbowButton>
-                        <RippleButton rippleColor="#ADD8E6" onClick={() => handleAction("AnotherComponent")} >
-                            Show Another Component
-                        </RippleButton>
+                        <button
+                            onClick={() => handleAction("SecretRecoveryPhrase")}
+                            className="px-4 py-2 text-black backdrop-blur-sm border border-black rounded-md hover:shadow-[0px_0px_4px_4px_rgba(0,0,0,0.1)] bg-white/[0.2] text-sm transition duration-200"
+                        >
+                        Solana
+                        </button>
+
+                        <Button disabled className="border bg-gray-200 cursor-pointer">
+                            Ethereum
+                        </Button>
+                        {/* <RainbowButton  >
+                            
+                        </RainbowButton> */}
+                        {/* <RippleButton rippleColor="#ADD8E6" onClick={() => handleAction("AnotherComponent")} >
+                            Ethereum
+                        </RippleButton> */}
                     </div>
                 </div>
                 

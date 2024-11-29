@@ -9,7 +9,7 @@ export function Footer() {
                 <div>
                     Designed and Developed by
                 </div>
-                <LinkPreview url="https://x.com/Sarthak10007" >
+                <LinkPreview url="https://x.com/Sarthak10007">
                     Sarthak Patil
                 </LinkPreview>
                 <LinkPreview url="https://google.com" className="font-bold">
