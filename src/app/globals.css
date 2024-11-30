@@ -17,6 +17,10 @@
 .lobster {
   font-family: var(--font--lobster);
 }
+
+.lexend_zetta {
+  font-family: var(--font--Lexend-Zetta);
+}
 /* @layer base {
   :root {
     --background: 0 0% 100%;

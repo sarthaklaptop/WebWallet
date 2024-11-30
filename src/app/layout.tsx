@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Pacifico, Joti_One, Audiowide, Lobster } from "next/font/google"
+import { Pacifico, Joti_One, Audiowide, Lobster, Lexend_Zetta } from "next/font/google"
 import "./globals.css";
 
 const pacifico_init = Pacifico({
   subsets: ['latin'],
   weight: '400',
   variable: '--font--pacifico'
+})
+
+const Lexend_Zetta_inti = Lexend_Zetta({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font--Lexend-Zetta'
 })
 
 const lobster_init = Lobster({
@@ -51,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${lobster_init.variable} ${geistMono.variable} ${pacifico_init.variable} ${joti_one.variable} ${audiowide_init.variable} antialiased w-3/4 flex mx-auto`}
+        className={`${geistSans.variable} ${Lexend_Zetta_inti.variable} ${lobster_init.variable} ${geistMono.variable} ${pacifico_init.variable} ${joti_one.variable} ${audiowide_init.variable} antialiased w-3/4 flex mx-auto`}
       >
         {children}
       </body>

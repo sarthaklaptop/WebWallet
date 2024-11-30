@@ -17,7 +17,7 @@ export default function InputDemo({privateKey}:any) {
     navigator.clipboard.writeText(privateKey); // Copies the memo to clipboard
     // alert("Secret copied to clipboard!");
     toast(  
-      "Private Key Copied",
+      "Private~ Key Copied",
       {
         position: 'bottom-right',
         duration: 1500, 

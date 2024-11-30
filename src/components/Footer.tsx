@@ -4,16 +4,14 @@ import { LinkPreview } from "./ui/link-preview";
 
 export function Footer() {
     return (
-        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-            <div>
+        <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center p-10">
+            <div className="flex w-full">
                 <div>
                     Designed and Developed by
                 </div>
-                <LinkPreview url="https://x.com/Sarthak10007">
-                    Sarthak Patil
-                </LinkPreview>
-                <LinkPreview url="https://google.com" className="font-bold">
-                    Sarthak Patil
+                &nbsp;
+                <LinkPreview className="" url="https://dub.sh/sarthak-portfolio">
+                    <p className="text-black underline pacifico">Sarthak Patil</p>
                 </LinkPreview>
             </div>
         </footer>
