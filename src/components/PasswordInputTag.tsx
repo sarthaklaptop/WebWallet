@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { IoCopyOutline } from "react-icons/io5";
 
 export default function InputDemo({privateKey}:any) {
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -13,11 +15,19 @@ export default function InputDemo({privateKey}:any) {
   const toggleVisibility = () => {
     setIsVisible((prevState) => !prevState);
     navigator.clipboard.writeText(privateKey); // Copies the memo to clipboard
-    alert("Secret copied to clipboard!");
+    // alert("Secret copied to clipboard!");
+    toast(  
+      "Private Key Copied",
+      {
+        position: 'bottom-right',
+        duration: 1500, 
+        icon: <IoCopyOutline/>
+      }
+    )
   } 
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 w-full">
       {/* <Label htmlFor="input-23">Show/hide password input</Label> */}
       <div 
         className="relative"
@@ -49,6 +59,7 @@ export default function InputDemo({privateKey}:any) {
           )}
         </button>
       </div>
+      <Toaster />
     </div>
   );
 }

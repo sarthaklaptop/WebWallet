@@ -14,6 +14,13 @@ import {
 } from "@/components/ui/accordion"
 import { IoCopyOutline } from "react-icons/io5";
 import InputDemo from './PasswordInputTag';
+// import { Toast, Toaster, createToaster } from '@ark-ui/react/toast'
+// import { XIcon } from 'lucide-react'
+
+import toast, { Toaster } from 'react-hot-toast';
+
+
+
 
 interface WalletsProps {
     memo: string; // Ensure memo is of type string
@@ -42,6 +49,14 @@ const Wallets: React.FC<WalletsProps> = ({memo}) => {
                     privateKey: Buffer.from(keypair.secretKey).toString('hex'),
                 },
             ]);
+
+            toast(  
+              "Wallet Created",
+              {
+                position: 'bottom-right',
+                duration: 1500
+              }
+            )
         } catch (error) {
             console.error('Error generating wallet:', error);
         }
@@ -50,7 +65,20 @@ const Wallets: React.FC<WalletsProps> = ({memo}) => {
     const clearWallet = () => {
         // setWallets.splice(0);
         setWallets([]);
+        toast(  
+          "Wallets Deleted",
+          {
+            position: 'bottom-right',
+            duration: 1500
+          }
+        )
     }
+
+    // const toaster = createToaster({
+    //   placement: 'bottom-end',
+    //   overlap: true,
+    //   gap: 24,
+    // })
 
   return (
     <div className='w-full'>
@@ -65,7 +93,14 @@ const Wallets: React.FC<WalletsProps> = ({memo}) => {
             <AccordionContent
               onClick={() => {
                 navigator.clipboard.writeText(memo); // Copies the memo to clipboard
-                alert("Secret copied to clipboard!"); // Optional feedback
+                toast(  
+                  "Secret Key Copied",
+                  {
+                    position: 'bottom-right',
+                    duration: 1500, 
+                    icon: <IoCopyOutline/>
+                  }
+                )
               }}        
             >
               <div className='grid grid-rows-4 grid-cols-4 '>
@@ -102,7 +137,10 @@ const Wallets: React.FC<WalletsProps> = ({memo}) => {
         <div className='flex flex-col items-center justify-center m-2'>
 
             <div className='flex items-center justify-center gap-2'>
-              <Button className='hover:bg-slate-100 border font-bold' onClick={addWallet}>
+              <Button className='hover:bg-slate-100 border font-bold' 
+                onClick={addWallet}
+                
+              >
                   Add Wallet
               </Button>
 
@@ -131,13 +169,21 @@ const Wallets: React.FC<WalletsProps> = ({memo}) => {
                           className='text-sm hover:text-gray-700 transition-all duration-75 cursor-pointer'
                           onClick={() => {
                             navigator.clipboard.writeText(wallet.address); // Copies the memo to clipboard
-                            alert("Secret copied to clipboard!"); // Optional feedback
+                            // alert("Secret copied to clipboard!"); // Optional feedback
+                            toast(  
+                              "Public Key Copied",
+                              {
+                                position: 'bottom-right',
+                                duration: 1500, 
+                                icon: <IoCopyOutline/>
+                              }
+                            )
                           }}
                         >
                         {wallet.address}
                       </p>
                     </div>
-                    <div className='flex flex-col gap-1'>
+                    <div className='flex flex-col gap-1 w-full'>
                       <span className="font-bold">Private Key</span> 
                       {/* <p
                         className='text-sm hover:text-gray-700 transition-all duration-75 cursor-pointer'
@@ -155,6 +201,20 @@ const Wallets: React.FC<WalletsProps> = ({memo}) => {
             </div>
             
         </div>
+
+        <Toaster />
+
+        {/* <Toaster toaster={toaster}>
+        {(toast) => (
+          <Toast.Root key={toast.id}>
+            <Toast.Title>{toast.title}</Toast.Title>
+            <Toast.Description>{toast.description}</Toast.Description>
+            <Toast.CloseTrigger>
+              <XIcon />
+            </Toast.CloseTrigger>
+          </Toast.Root>
+        )}
+      </Toaster> */}
     </div>
   )
 }
