@@ -3,8 +3,6 @@
 import { SecretRecoveryPhrase } from "@/components/SecretRecoveryPhrase";
 import { AnotherComponent } from "@/components/AnotherComponent";
 import { useState } from "react";
-import { RainbowButton } from "@/components/ui/rainbow-button";
-import RippleButton from "@/components/ui/ripple-button";
 import { Button } from "./ui/button";
 
 // const handleAction = (component: string) => {
