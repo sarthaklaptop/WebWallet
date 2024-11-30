@@ -1,4 +1,5 @@
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { MainComponent } from "@/components/MainComponent";
 import { Separator } from "@/components/ui/separator";
 
@@ -8,6 +9,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-between w-full h-lvh">
+
+      <Header/>
 
       
 
