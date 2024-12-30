@@ -56,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${Lexend_Zetta_inti.variable} ${lobster_init.variable} ${geistMono.variable} ${pacifico_init.variable} ${joti_one.variable} ${audiowide_init.variable} antialiased w-3/4 flex mx-auto`}
       >
