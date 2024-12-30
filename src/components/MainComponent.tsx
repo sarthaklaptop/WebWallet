@@ -48,12 +48,6 @@ export function MainComponent() {
                         <Button disabled className="border bg-gray-200 cursor-pointer">
                             Ethereum
                         </Button>
-                        {/* <RainbowButton  >
-                            
-                        </RainbowButton> */}
-                        {/* <RippleButton rippleColor="#ADD8E6" onClick={() => handleAction("AnotherComponent")} >
-                            Ethereum
-                        </RippleButton> */}
                     </div>
                 </div>
                 
